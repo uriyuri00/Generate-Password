@@ -13,7 +13,7 @@ function generatePassword(){
     var combinedArr = [];
     
     if(!(passwordLength >= 8 && passwordLength <= 128)){
-        alert('Must be');
+        alert('Password must be a number betwween 8 and 128');
         return;
     }
 
@@ -23,7 +23,7 @@ function generatePassword(){
     var includesLowercase = confirm("Click OK to confirm including lowercase.")  ;
 
     if(!includesNumber && !includesSpecialCharaters && !includesUppercase && !includesLowercase){
-        alert('Must be');
+        alert('Password must be inclueds number,special characters,uppercase,lowercase.');
         return;
     };
 
