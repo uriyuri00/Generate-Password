@@ -22,11 +22,36 @@ function generatePassword(){
     var includesUppercase = confirm("Click OK to confirm including uppercase.")  ;
     var includesLowercase = confirm("Click OK to confirm including lowercase.")  ;
 
-    if(!includesNumber && !includesSpecialCharaters && !includesUppercase && !includesLowercase){
+    if(!includesNumber || !includesSpecialCharaters || !includesUppercase || !includesLowercase){
         alert('Password must be inclueds number,special characters,uppercase,lowercase.');
         return;
     };
 
+    if(includesNumber) {
+        password += pickRandomChar(numberArray)
+        combinedArr  =  combinedArr.concat(numberArray)
+    }
+    
+    if(includesSpecialCharaters) {
+        password += pickRandomChar(specialCharactersArray)
+        combinedArr = combinedArr.concat(specialCharactersArray)
+    }
+    if(includesUppercase){
+        password += pickRandomChar(uppercaseArray)
+        combinedArr = combinedArr.concat(uppercaseArray)
+    }
+    if(includesLowercase){
+        password += pickRandomChar(lowercaseArray)
+        combinedArr = combinedArr.concat(lowercaseArray)
+    }
+    
+    var remainingPasswordLength = passwordLength - password.length
+    
+    for(var i = 0; i < remainingPasswordLength; i++){
+        password += pickRandomChar(combinedArr);
+    }
+    
+    return password;
 };
 
 
