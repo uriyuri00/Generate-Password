@@ -8,6 +8,8 @@ var specialCharactersArray = ["!","#","$","%","&","*","+", "-","/",":",";","<","
 
 function pickRandomChar(randomArray){
     var randomChar = Math.floor(Math.random() * randomArray.length);
+    
+    return randomArray[randomChar];
 
 };
 
