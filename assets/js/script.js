@@ -6,6 +6,10 @@ var lowercaseArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o
 var numberArray = ["0","1","2","3","4","5","6","7","8","9"];
 var specialCharactersArray = ["!","#","$","%","&","*","+", "-","/",":",";","<","=","]",">","?","@","[","^"];
 
+function pickRandomChar(randomArray){
+    var randomChar = Math.floor(Math.random() * randomArray.length);
+
+};
 
 function generatePassword(){
     var passwordLength = parseInt(prompt("How many characters would you like your password to contain?", "8 - 128 characters"));
@@ -62,7 +66,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
